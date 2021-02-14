@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "robotApp",
+    "name": "นายโรบอท",
     "slug": "robotApp",
+    "privacy": "public",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,13 +21,16 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.robotApp.robot",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "permissions":[],
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-5901161227057601/7244214360"
       }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     }
   }
 }

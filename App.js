@@ -1,21 +1,64 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { StyleSheet, View } from 'react-native';
+import * as Font from 'expo-font';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+
+import Home from './Home'
+import Policies from './Policies';
+import Testing from './Testing';
+import Result from './Result';
+import AboutMe from './AboutMe';
+
+export default class App extends React.Component {
+  state = {
+    fontsLoaded: false,
+  };
+
+  async loadFonts() {
+    await Font.loadAsync({
+      SarabunMedium: require('./assets/fonts/Sarabun-Medium.ttf'),
+      SarabunRegular: require('./assets/fonts/Sarabun-Regular.ttf'),
+      SarabunLight: require('./assets/fonts/Sarabun-Light.ttf')
+    });
+    this.setState({ fontsLoaded: true });
+  }
+
+  componentDidMount() {
+    this.loadFonts();
+  }
+  render() {
+    const RootStack = createStackNavigator(
+      {
+        เอกคอมพิวเตอร์: Home,
+        ข้อตกลงการใช้งาน: Policies,
+        ทำข้อสอบ: Testing,
+        เฉลยข้อสอบ: Result,
+        ผู้จัดทำ: AboutMe
+      },
+      {
+        initialRouteName: 'เอกคอมพิวเตอร์',
+      }
+    );
+    
+    const AppContainer = createAppContainer(RootStack);
+
+    if (this.state.fontsLoaded) {
+      return <AppContainer />;
+    } else {
+      return null;
+    }
+  }
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    flexDirection: 'column',
     justifyContent: 'center',
-  },
+    alignItems: 'stretch',
+    backgroundColor: '#fff'
+  }
 });
