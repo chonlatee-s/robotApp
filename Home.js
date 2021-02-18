@@ -16,7 +16,7 @@ export default class Home extends React.Component {
                 </View>
                 <View style={styles.container}>
                     <View style={styles.coffee}>
-                        <Text style={styles.txtCoffee}>สนับสนุนค่ากาแฟแอดมิน :)</Text>
+                        <Text style={styles.txtCoffee}>ร่วมเป็นกำลังใจ และสนับสนุนนักพัฒนา :)</Text>
                         <Text style={styles.txtCoffee2}>พร้อมเพย์ 082 781 8941 ชลธี สินสาตร์</Text>
                     </View>
                     <View style={styles.line}/>
