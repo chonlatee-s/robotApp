@@ -89,25 +89,16 @@ const styles = StyleSheet.create({
         padding: 12,
         borderRadius: 5,
         margin: 20,
-
-        shadowColor: "#000",
-        shadowOffset: {
-          width: 0,
-          height: 2
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
     },
 
     coffee: {
-        backgroundColor: '#d1ecf1',
+        backgroundColor: '#f8f2e8',
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
     },
     txtCoffee: {
-        color: '#357193',
+        color: '#b28644',
         fontFamily: 'SarabunRegular',
         fontSize: 14,
         paddingTop: 15,
@@ -115,7 +106,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     txtCoffee2: {
-        color: '#357193',
+        color: '#b28644',
         fontFamily: 'SarabunRegular',
         fontSize: 14,
         paddingTop:0,
