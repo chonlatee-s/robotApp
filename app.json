@@ -21,11 +21,8 @@
     },
     "android": {
       "package": "com.robotApp.robot",
-      "versionCode": 3,
-      "permissions": ["READ_EXTERNAL_STORAGE","ACCESS_BACKGROUND_LOCATION"],
-      "config": {
-        "googleMobileAdsAppId": "ca-app-pub-5901161227057601/7244214360"
-      }
+      "versionCode": 4,
+      "permissions": []
     }
   }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import * as Font from 'expo-font';
 
 import { createAppContainer } from 'react-navigation';
@@ -10,6 +10,7 @@ import Policies from './Policies';
 import Testing from './Testing';
 import Result from './Result';
 import AboutMe from './AboutMe';
+import ProcessApp from './ProcessApp';
 
 export default class App extends React.Component {
   state = {
@@ -47,7 +48,7 @@ export default class App extends React.Component {
     if (this.state.fontsLoaded) {
       return <AppContainer />;
     } else {
-      return null;
+      return <ProcessApp/>;
     }
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Modal } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import axios from 'axios'
 import Exam from './Exam'
 import {AdMobBanner} from 'expo-ads-admob';
