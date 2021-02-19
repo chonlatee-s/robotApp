@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         marginBottom:15,
     },
     boxAnswer: {
-        height:'60%',
+        height:'80%',
         backgroundColor: '#f6fff6',
         borderColor:'#5b785b',
         borderLeftWidth:5,
