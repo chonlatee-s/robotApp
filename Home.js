@@ -1,8 +1,25 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import {AdMobBanner} from 'expo-ads-admob';
+import axios from 'axios'
 
 export default class Home extends React.Component {
+    state = {
+        txt : "ถิ่นไทยในป่ากว้าง ห่างไกล แสงอารยธรรมใด ส่องบ้าง เห็นเทียนอยู่รำไร เล่มหนึ่ง ครูนั่นแหละอาจสร้าง เสกให้ชัชวาล [ ม.ล.ปิ่น มาลากุล ]"
+    }
+    getNews = () => {
+        axios.get('https://xn--o3cdd5af5d5a4j.com/getNews.php')
+            .then((res) => {
+                this.setState({txt:res.data.news})
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+    componentDidMount() { // ดึงข้อสอบจากฐานข้อมูล
+        this.getNews()
+    }
+
     render() {
         return (
             <View style={styles.containerBig}>
@@ -12,13 +29,13 @@ export default class Home extends React.Component {
                         resizeMode="contain"
                         source={require('./assets/home.png')}
                     />
-                    <Text style={styles.txtRobot}>นายโรบอท.com</Text>
+                </View>
+                <View style = { styles.boxNews }>
+                    <Text style = { styles.txtNews } >{this.state.txt}</Text>
                 </View>
                 <View style={styles.container}>
-                    <View style={styles.coffee}>
-                        <Text style={styles.txtCoffee}>ร่วมเป็นกำลังใจ และสนับสนุนนักพัฒนา :)</Text>
+                        <Text style={styles.txtCoffee}>ร่วมเป็นกำลังใจ และสนับสนุนนักพัฒนา</Text>
                         <Text style={styles.txtCoffee2}>พร้อมเพย์ 082 781 8941 ชลธี สินสาตร์</Text>
-                    </View>
                     <View style={styles.line}/>
                     <TouchableOpacity style={styles.btnTest} onPress={() => this.props.navigation.navigate('ทำข้อสอบ')}>
                         <Text style={styles.txtBtn}>ทำข้อสอบ</Text>
@@ -70,6 +87,29 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor:'#fff'
     },
+    boxNews: {
+        backgroundColor: '#5b785b',
+        borderRadius: 5,
+        margin:20,
+        marginBottom:0,
+        padding:10,
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+
+        elevation: 2,
+    },
+    txtNews: {
+        color:'#fff',
+        fontFamily: 'SarabunLight',
+        fontSize: 14,
+        textAlign:'center',
+    },
     box: {
         alignItems: 'center'
     },
@@ -78,27 +118,23 @@ const styles = StyleSheet.create({
         width: 99,
         height: 90,
     },
-    txtRobot: {
-        color: '#5b785b',
-        fontFamily: 'SarabunRegular',
-        fontSize: 14,
-        textAlign: 'center'
-    },
     container: {
-        backgroundColor: '#f6fff6',
+        backgroundColor: '#fff',
         padding: 12,
         borderRadius: 5,
         margin: 20,
-    },
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
 
-    coffee: {
-        backgroundColor: '#f8f2e8',
-        borderRadius: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
+        elevation: 2,
     },
     txtCoffee: {
-        color: '#b28644',
+        color: '#627498',
         fontFamily: 'SarabunRegular',
         fontSize: 14,
         paddingTop: 15,
@@ -106,7 +142,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     txtCoffee2: {
-        color: '#b28644',
+        color: '#627498',
         fontFamily: 'SarabunRegular',
         fontSize: 14,
         paddingTop:0,

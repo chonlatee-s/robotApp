@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         marginBottom:15,
     },
     boxAnswer: {
-        height:'70%',
+        height:'73%',
         backgroundColor: '#f6fff6',
         borderColor:'#5b785b',
         borderLeftWidth:5,
@@ -51,6 +51,12 @@ const styles = StyleSheet.create({
         fontSize:12,
         color:'#5b785b',
     },
+    ref: {
+        fontFamily:'SarabunLight',
+        fontSize:10,
+        paddingRight:5,
+        color:'#5b785b',
+    },
     reply: {
         fontFamily:'SarabunLight',
         fontSize:12,
@@ -66,6 +72,9 @@ const styles = StyleSheet.create({
 });
 
 export default class Result extends React.Component {
+    openWEB = (link) => {
+        Linking.openURL(link);
+    }
     render() {
         return (
             <View style = { styles.container }>
@@ -112,6 +121,12 @@ export default class Result extends React.Component {
                                         {
                                             item.check===true ? <Ionicons name="md-checkmark" size={ 14 } color="#7A7575"/> 
                                             :<Ionicons name="md-close" size={ 14 } color="#7A7575"/> 
+                                        }
+                                        {
+                                            item.ref === '' ? null 
+                                            :<TouchableOpacity onPress={() => this.openWEB(item.ref)}>
+                                                <Text style = { styles.ref }>อ้างอิง</Text>
+                                            </TouchableOpacity>
                                         }
                                     </View>
                                     <View style = { styles.hr }></View>

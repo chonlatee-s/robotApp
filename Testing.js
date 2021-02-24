@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import axios from 'axios'
 import Exam from './Exam'
-import {AdMobBanner} from 'expo-ads-admob';
 
 export default class Testing extends React.Component {
     state = {
@@ -153,11 +152,6 @@ export default class Testing extends React.Component {
                     sec = {this.state.sec}
                     minute = {this.state.minute}
                 />
-                <AdMobBanner
-                    bannerSize="fullBanner"
-                    adUnitID="ca-app-pub-5901161227057601/7244214360"
-                    servePersonalizedAds
-                    onDidFailToReceiveAdWithError={this.bannerError} />
             </View>
         );
     }
