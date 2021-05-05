@@ -1,16 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, Linking } from 'react-native';
 import {AdMobBanner} from 'expo-ads-admob';
 import axios from 'axios'
 
 export default class Home extends React.Component {
     state = {
-        txt : "ถิ่นไทยในป่ากว้าง ห่างไกล แสงอารยธรรมใด ส่องบ้าง เห็นเทียนอยู่รำไร เล่มหนึ่ง ครูนั่นแหละอาจสร้าง เสกให้ชัชวาล [ ม.ล.ปิ่น มาลากุล ]"
+        txt : "ถิ่นไทยในป่ากว้าง ห่างไกล แสงอารยธรรมใด ส่องบ้าง เห็นเทียนอยู่รำไร เล่มหนึ่ง ครูนั่นแหละอาจสร้าง เสกให้ชัชวาล [ ม.ล.ปิ่น มาลากุล ]",
+        linkNews:''
     }
     getNews = () => {
         axios.get('https://xn--o3cdd5af5d5a4j.com/getNews.php')
             .then((res) => {
-                this.setState({txt:res.data.news})
+                this.setState({txt:res.data.news, linkNews:res.data.link})
             })
             .catch((err) => {
                 console.log(err)
@@ -18,6 +19,10 @@ export default class Home extends React.Component {
     }
     componentDidMount() { // ดึงข้อสอบจากฐานข้อมูล
         this.getNews()
+    }
+
+    openNews = (link) => {
+        Linking.openURL(link);
     }
 
     render() {
@@ -31,7 +36,12 @@ export default class Home extends React.Component {
                     />
                 </View>
                 <View style = { styles.boxNews }>
-                    <Text style = { styles.txtNews } >{this.state.txt}</Text>
+                    {
+                        this.state.linkNews === '' ? <Text style = { styles.txtNews } >{this.state.txt}</Text>
+                        :<TouchableOpacity onPress={() => this.openNews(this.state.linkNews)}>
+                            <Text style = { styles.txtNews } >{this.state.txt}</Text>
+                        </TouchableOpacity>
+                    }
                 </View>
                 <View style={styles.container}>
                         <Text style={styles.txtCoffee}>ร่วมเป็นกำลังใจ และสนับสนุนนักพัฒนา</Text>
