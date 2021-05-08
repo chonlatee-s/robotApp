@@ -32,14 +32,14 @@ export default class App extends React.Component {
   render() {
     const RootStack = createStackNavigator(
       {
-        เอกคอมพิวเตอร์: Home,
+        นายโรบอท: Home,
         ข้อตกลงการใช้งาน: Policies,
         ทำข้อสอบ: Testing,
         เฉลยข้อสอบ: Result,
         ผู้จัดทำ: AboutMe
       },
       {
-        initialRouteName: 'เอกคอมพิวเตอร์',
+        initialRouteName: 'นายโรบอท',
       }
     );
     

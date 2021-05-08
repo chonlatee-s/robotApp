@@ -44,7 +44,7 @@ export default class Home extends React.Component {
                     }
                 </View>
                 <View style={styles.container}>
-                        <Text style={styles.txtCoffee}>ร่วมเป็นกำลังใจ และสนับสนุนนักพัฒนา</Text>
+                        <Text style={styles.txtCoffee}>เลี้ยงชานมไข่มุกแอดมิน</Text>
                         <Text style={styles.txtCoffee2}>พร้อมเพย์ 082 781 8941 ชลธี สินสาตร์</Text>
                     <View style={styles.line}/>
                     <TouchableOpacity style={styles.btnTest} onPress={() => this.props.navigation.navigate('ทำข้อสอบ')}>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#fff'
     },
     boxNews: {
-        backgroundColor: '#5b785b',
+        backgroundColor: '#627498',
         borderRadius: 5,
         margin:20,
         marginBottom:0,
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
         height: 90,
     },
     container: {
-        backgroundColor: '#fff',
+        backgroundColor: '#5b785b',
         padding: 12,
         borderRadius: 5,
         margin: 20,
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
         elevation: 2,
     },
     txtCoffee: {
-        color: '#627498',
+        color: '#fff',
         fontFamily: 'SarabunRegular',
         fontSize: 14,
         paddingTop: 15,
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     txtCoffee2: {
-        color: '#627498',
+        color: '#fff',
         fontFamily: 'SarabunRegular',
         fontSize: 14,
         paddingTop:0,
@@ -160,12 +160,12 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     btnTest: {
-        backgroundColor: '#eb5749',
+        backgroundColor: '#fff',
         alignItems: 'center',
         borderRadius: 5,
     },
     txtBtn: {
-        color: '#fff',
+        color: '#5b785b',
         fontFamily: 'SarabunRegular',
         fontSize: 18
     },
