@@ -4,7 +4,6 @@ import { Ionicons } from '@expo/vector-icons';
 import ProgressBar from 'react-native-progress/Bar';
 import ExamList from './ExamList'
 import Result from './Result'
-import {AdMobBanner} from 'expo-ads-admob';
 
 const styles = StyleSheet.create({
     container: {
@@ -220,11 +219,6 @@ export default class Exam extends React.Component {
                     </View>
                 </View>
             }
-                <AdMobBanner
-                    bannerSize="fullBanner"
-                    adUnitID="ca-app-pub-5901161227057601/7244214360"
-                    servePersonalizedAds
-                    onDidFailToReceiveAdWithError={this.bannerError} />
         </View>
         );
     }

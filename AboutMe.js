@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
-import {AdMobBanner} from 'expo-ads-admob';
 
 export default class AboutMe extends React.Component {
     render() {
@@ -42,10 +41,7 @@ export default class AboutMe extends React.Component {
                             - พัฒนาระบบสารสนเทศให้องค์กรต่าง ๆ เช่น กระทรวงพาณิชย์ เบทราโก สมศ.
                         </Text>
                         <Text style={styles.txtDetail}>
-                            - ครูสาขาคอมพิวเตอร์ธุรกิจ
-                        </Text>
-                        <Text style={styles.txtDetail}>
-                            - หัวหน้างานศูนย์ข้อมูลสารสนเทศ
+                            - ครูสาขาคอมพิวเตอร์ธุรกิจ และดูแลงานศูนย์ข้อมูลสารสนเทศ
                         </Text>
                         <Text style={styles.txtDetail}>
                             - พัฒนาเว็บไซต์สอบครูผู้ช่วย ครูผู้ช่วย.com
@@ -67,18 +63,10 @@ export default class AboutMe extends React.Component {
                             ชลธี สินสาตร์
                         </Text>
                         <Text style={styles.txtDetail}>
-                            โทรศัพท์ 082 781 8941
-                        </Text>
-                        <Text style={styles.txtDetail}>
                             อีเมล kruchonlatee@gmail.com
                         </Text>
                     </ScrollView>
                 </View>
-                <AdMobBanner
-                    bannerSize="fullBanner"
-                    adUnitID="ca-app-pub-5901161227057601/7244214360"
-                    servePersonalizedAds
-                    onDidFailToReceiveAdWithError={this.bannerError} />
             </View>
         );
     }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
-import {AdMobBanner} from 'expo-ads-admob';
 
 export default class Policies extends React.Component {
     render() {
@@ -34,11 +33,6 @@ export default class Policies extends React.Component {
                         </Text>
                     </ScrollView>
                 </View>
-                <AdMobBanner
-                    bannerSize="fullBanner"
-                    adUnitID="ca-app-pub-5901161227057601/7244214360"
-                    servePersonalizedAds
-                    onDidFailToReceiveAdWithError={this.bannerError} />
             </View>
         );
     }

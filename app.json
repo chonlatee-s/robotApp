@@ -21,7 +21,7 @@
     },
     "android": {
       "package": "com.robotApp.robot",
-      "versionCode": 8,
+      "versionCode": 9,
       "permissions": []
     }
   }
